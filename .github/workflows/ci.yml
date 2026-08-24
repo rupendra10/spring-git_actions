@@ -36,7 +36,7 @@ jobs:
         run: mvn --batch-mode --no-transfer-progress clean verify
 
       - name: Upload packaged JAR
-        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/main')
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
         uses: actions/upload-artifact@v4
         with:
           name: devopsapp-${{ github.sha }}
